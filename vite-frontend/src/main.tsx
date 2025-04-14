@@ -29,7 +29,7 @@ const config = getDefaultConfig({
 
 const queryClient = new QueryClient();
 
-createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById("root")!).render(
   <WagmiProvider config={config}>
     <QueryClientProvider client={queryClient}>
       <RainbowKitProvider>
