@@ -6,7 +6,6 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useContract } from "./context/ContractInteraction";
 import { BrowserProvider, Contract } from "ethers";
 import Box from "../out/Box.sol/Box.json";
-// import { getNumber } from "./context/ContractInteraction";
 
 function App() {
   // const [contract, setContract] = useState();
