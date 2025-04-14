@@ -7,12 +7,12 @@ import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { WagmiProvider } from "wagmi";
 import { mainnet, polygon, optimism, arbitrum, base } from "wagmi/chains";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { ContractProvider } from "./context/ContractInteraction.jsx";
 
 const anvil = {
   id: 31337,
   name: "Anvil",
-  iconUrl:
-    "",
+  iconUrl: "",
   iconBackground: "#fff",
   nativeCurrency: { name: "Anvil", symbol: "ETH", decimals: 18 },
   rpcUrls: {
@@ -27,14 +27,15 @@ const config = getDefaultConfig({
   ssr: false, // If your dApp uses server side rendering (SSR)
 });
 
-
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")).render(
   <WagmiProvider config={config}>
     <QueryClientProvider client={queryClient}>
       <RainbowKitProvider>
-        <App />
+        <ContractProvider>
+          <App />
+        </ContractProvider>
       </RainbowKitProvider>
     </QueryClientProvider>
   </WagmiProvider>

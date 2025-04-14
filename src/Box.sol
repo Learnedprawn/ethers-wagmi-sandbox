@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 contract Box {
-    uint256 public number;
+    uint256 public number = 2;
 
     function getNumber() public view returns(uint256) {
         return number;
